@@ -4,7 +4,7 @@
 // The owner must replace CONTACT_EMAIL below with the real inbox address,
 // then submit the form once to activate it (FormSubmit sends a confirm email).
 // ---------------------------------------------------------------------------
-var CONTACT_EMAIL = "hello@getziteo.com"; // TODO: owner — replace with real inbox
+var CONTACT_EMAIL = "hello@tryziteo.com"; // owner: create this address (or forward) in IONOS, then submit the form once to activate FormSubmit
 
 (function () {
   // Mobile nav
