@@ -101,6 +101,16 @@ h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); margin-bottom: 8px; text-align: cent
 .fine { margin-top: 16px; font-size: .85rem; color: #8b98b3; }
 .switch-note { text-align: center; margin-top: 30px; color: #9aa6bd; }
 
+/* Guarantee */
+.guarantee {
+  max-width: 640px; margin: 36px auto 0; text-align: center;
+  background: #182642; border: 1.5px dashed var(--accent);
+  border-radius: var(--radius); padding: 28px 30px;
+}
+.guarantee h3 { color: var(--accent); margin-bottom: 10px; font-size: 1.25rem; }
+.guarantee p { color: #cdd6e4; }
+.guarantee .fine { margin-top: 12px; font-size: .82rem; color: #8b98b3; }
+
 /* Features */
 .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .feature { border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 24px; }
