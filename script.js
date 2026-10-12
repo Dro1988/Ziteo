@@ -69,3 +69,40 @@ var CONTACT_EMAIL = "hello@tryziteo.com"; // owner: create this address (or forw
       .finally(function () { btn.disabled = false; });
   });
 })();
+
+// NEWSLETTER SIGNUP: posts to FormSubmit (free). First submit triggers a
+// confirmation email to dandrsalesllc@gmail.com — click it to activate.
+(function () {
+  var form = document.getElementById('newsletterForm');
+  if (!form) return;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = document.getElementById('nlName').value.trim();
+    var email = document.getElementById('nlEmail').value.trim();
+    var status = document.getElementById('nlStatus');
+    if (!email || email.indexOf('@') < 0) {
+      status.className = 'form-status err';
+      status.textContent = 'Please enter a valid email address.';
+      return;
+    }
+    status.textContent = 'Subscribing...';
+    var btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    fetch('https://formsubmit.co/ajax/' + encodeURIComponent('dandrsalesllc@gmail.com'), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ _subject: 'New Ziteo guide subscriber', Name: name || '(none)', Email: email })
+    })
+      .then(function (res) { return res.json(); })
+      .then(function () {
+        status.className = 'form-status ok';
+        status.textContent = "You're in — talk soon.";
+        form.reset();
+      })
+      .catch(function () {
+        status.className = 'form-status err';
+        status.textContent = 'Something went wrong. Please try again.';
+      })
+      .finally(function () { btn.disabled = false; });
+  });
+})();
