@@ -83,6 +83,9 @@ h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); margin-bottom: 8px; text-align: cent
 
 /* Pricing */
 .plans { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; max-width: 860px; margin: 0 auto; }
+.plans-3 { grid-template-columns: repeat(3, 1fr); max-width: 1140px; }
+.plans-1 { grid-template-columns: 1fr; max-width: 480px; }
+.steps-4 { grid-template-columns: repeat(4, 1fr); }
 .plan { background: #141f38; border: 1px solid #243357; border-radius: 18px; padding: 36px 32px; position: relative; }
 .plan-featured { border: 2px solid var(--accent); background: #182642; }
 .badge {
@@ -180,4 +183,8 @@ h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); margin-bottom: 8px; text-align: cent
   .nav-inner { position: relative; }
   .form-row { grid-template-columns: 1fr; }
   .section { padding: 56px 0; }
+}
+@media (max-width: 1020px) and (min-width: 821px) {
+  .plans-3 { grid-template-columns: 1fr; max-width: 560px; }
+  .steps-4 { grid-template-columns: repeat(2, 1fr); }
 }
